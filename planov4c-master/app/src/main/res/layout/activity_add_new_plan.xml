@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:cardBackgroundColor="@color/main_light"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_close" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/closeButton"
+                android:text="Create a new plan"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="CREATE"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nazovPlanu"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="5dp"
+                android:hint="Name your plan"
+                android:layout_width="match_parent">
+            </EditText>
+
+            <TextView
+                android:id="@+id/popisPriorita"
+                android:layout_below="@+id/nazovPlanu"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:text="Choose plan priority"/>
+
+            <RadioGroup
+                android:layout_below="@id/popisPriorita"
+                android:id="@+id/radioGroupPriorita"
+                android:checkedButton="@+id/buttonPriorita1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp">
+                <RadioButton
+                    android:id="@+id/buttonPriorita1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Priority 1"/>
+                <RadioButton
+                    android:id="@+id/buttonPriorita2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Priority 2"/>
+                <RadioButton
+                    android:id="@+id/buttonPriorita3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Priority 3"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/popisOznamenie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroupPriorita"
+                android:padding="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:text="Choose time consumption of the plan" />
+
+            <RadioGroup
+                android:layout_below="@id/popisOznamenie"
+                android:id="@+id/radioGroupOznamenie"
+                android:checkedButton="@+id/buttonDenne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp">
+
+                <RadioButton
+                    android:id="@+id/buttonDenne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Daily"/>
+                <RadioButton
+                    android:id="@+id/buttonTyzdenne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Weekly"/>
+                <RadioButton
+                    android:id="@+id/buttonMesacne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Monthly"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/popisKategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroupOznamenie"
+                android:padding="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:text="Choose plan category" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupKategorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/popisKategoria"
+                android:layout_marginHorizontal="5dp"
+                android:checkedButton="@+id/buttonPraca">
+
+                <RadioButton
+                    android:id="@+id/buttonPraca"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Health"/>
+                <RadioButton
+                    android:id="@+id/buttonRodina"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Work"/>
+
+                <RadioButton
+                    android:id="@+id/buttonSkola"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Family"/>
+                <RadioButton
+                    android:id="@+id/buttonZdravie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Goal"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
